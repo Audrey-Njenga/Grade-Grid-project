@@ -32,7 +32,7 @@
                 <label >Confirm password:</label>
                 <input id="confirm" type="password" name="confirm_password" required> <br>
                 <input type="submit"></input><br><br>
-                <button><a href="login.php">Login</a></button>
+                <button><a href="index.php">Login</a></button>
 
                 <?php
                 if (isset($_POST['submit'])) {

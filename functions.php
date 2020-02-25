@@ -34,7 +34,7 @@ function login($user_name, $password){
             $savedPassword = $row["userPassword"];
         }
         if ($savedPassword == md5($password)) {
-            header("Location: index.html");
+            header("Location: landing.html");
             exit();
         } else {
             echo "<p id ='error'>invalid password</p>";

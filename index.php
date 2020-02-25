@@ -18,7 +18,7 @@
         </div>
         
         <div id="login" >            
-            <form method="POST" action="login.php">
+            <form method="POST" action="index.php">
                 <h1 id ="header"> Grade Grid </h1>
                 <h4>Login</h4>
                 <label>Username:</label>
