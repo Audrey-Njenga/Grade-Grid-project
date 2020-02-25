@@ -34,11 +34,10 @@ function login($user_name, $password){
             $savedPassword = $row["userPassword"];
         }
         if ($savedPassword == md5($password)) {
-            echo "Successful login";
             header("Location: index.html");
             exit();
         } else {
-            echo "invalid password";
+            echo "<p id ='error'>invalid password</p>";
         }
     }else{
         echo "Unsuccessful".mysqli_error($GLOBALS['dbconn']);
