@@ -14,25 +14,20 @@
 <body>
     <div class="main">
         <div class="logo">
-        <img src="assets/images/alu_logo_original.png" alt="logo">
+            <img src="assets/images/alu_logo_original.png" alt="logo">
         </div>
 
         <div id="login">
             <form method="POST" action="signup.php">
-                <h1 id ="header"> Grade Grid </h1>
-                <h3>Sign up </h3>
-                <label>First name:</label>
-                <input type="text" name="first_name" required> <br>
-                <label>Last name:</label>
-                <input type="text" name="last_name" required> <br>
-                <label>Username:</label>
-                <input type="text" name="user_name" required> <br>
-                <label>Password:</label>
-                <input type="password" name="password" required> <br>
-                <label >Confirm password:</label>
-                <input id="confirm" type="password" name="confirm_password" required> <br>
-                <input type="submit"></input><br><br>
-                <button><a href="index.php">Login</a></button>
+                <h1 id="header"> GRADE GRID </h1>
+                <h4>SIGN UP </h4>
+                <input class="form-control" type="text" name="first_name" required placeholder="first name"> <br>
+                <input class="form-control" type="text" name="last_name" required placeholder="last name"> <br>
+                <input class="form-control" type="text" name="email" required placeholder="email"> <br>
+                <input class="form-control" type="password" name="password" required placeholder="password"> <br>
+                <input class="form-control" id="confirm" type="password" name="confirm_password" required placeholder="confirm password"> <br>
+                <button class="btn btn-primary btn-block" type="submit">Submit</button><br><br>
+                <a href="index.php">Login</a>
 
                 <?php
                 if (isset($_POST['submit'])) {
@@ -46,7 +41,7 @@
 
 <?php
 include('functions.php');
- 
+
 // calls sign up function if all fields are set and the passwords match
 if (
     isset($_POST['first_name']) && isset($_POST['last_name'])

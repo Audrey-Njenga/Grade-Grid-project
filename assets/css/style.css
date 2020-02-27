@@ -9,7 +9,7 @@
 body{
 
     text-align: center;
-    background-image: linear-gradient(-90deg,#e65c00,#f9d423);
+    background-image: url('/assets/images/books.jpg');
    
 }
 
@@ -22,50 +22,52 @@ body{
 }
 
 form{
-    margin-top: 5%;
-    background-color: whitesmoke;
-    padding: 40px;
+    margin-top: 5%;   
+    padding: 30px 50px;
     width: 40%;
     margin-left: 30%;
-    border-radius: 5%;
+    
 }
 
 #header{
-    font-family: 'Arima Madurai' ;
-    font-weight: 600;
-    
-    
+    font-family: 'Open Sans' ;
+    font-weight: 400;
+    color: #0c004d;         
 
 }
 
-label{
-    font-family: 'Arima Madurai' ;
-}
-
-form h4, h3{
-    font-family: 'Arima Madurai' ;
-    font-weight: 600;
+form h4, h6{
+    font-family: 'Open Sans' ;
+    font-weight: 400;
+    color:  #0c004d;
 }
 
 form button{
-    font-family: 'Arima Madurai' ;
-    font-weight: 600;
+    font-family: 'Open Sans' ;
     padding: 5px;
+  
 }
-
 form input{
-    font-family: 'Arima Madurai' ;
+    font-family: 'Open Sans';
+    text-align: center;
+    padding: 10px;
+    color:black;
+    border-radius: 3%;
 
+}
+#check {
+    font-family: 'Open Sans' ;
+    color: whitesmoke;
 }
 
 form a{
-    text-decoration: none;
-  
-    font-weight: 600;
+    text-decoration: none;  
+    font-family: 'Open Sans';
+    color: #4021ed;
 }
 
 form a:hover{
-    color: #e65c00;
+    color: maroon;
     text-decoration: none;
 
 }
@@ -76,12 +78,19 @@ form a:hover{
 
 @media only screen and (max-width: 700px){
 form{
-    width: 80%;
-    margin-left: 8%;
+    width: 90%;
+    margin-left: 5%;
 }
 
 input{
     width: 70%;
     
+}
+
+#header{
+    font-size: 26px;
+}
+form h1,h4{
+    font-size: 20px;
 }
 }
