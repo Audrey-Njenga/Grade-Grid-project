@@ -19,15 +19,39 @@
 
         <div id="login">
             <form method="POST" action="signup.php">
-                <h1 id="header"> GRADE GRID </h1>
-                <h4>SIGN UP </h4>
-                <input class="form-control" type="text" name="first_name" required placeholder="first name"> <br>
-                <input class="form-control" type="text" name="last_name" required placeholder="last name"> <br>
-                <input class="form-control" type="text" name="email" required placeholder="email"> <br>
-                <input class="form-control" type="password" name="password" required placeholder="password"> <br>
-                <input class="form-control" id="confirm" type="password" name="confirm_password" required placeholder="confirm password"> <br>
-                <button class="btn btn-primary btn-block" type="submit">Submit</button><br><br>
-                <a href="index.php">Login</a>
+                <h2>SIGN UP </h2>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">First Name:</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Last Name:</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Email Address:</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Password:</span>
+                    </div>
+                    <input type="password" class="form-control">
+                </div><div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Confirm password:</span>
+                    </div>
+                    <input type="password" class="form-control">
+                </div>
+                
+                <button class="btn btn-primary btn-block" type="submit">SUBMIT</button><br><br>
+                <a href="index.php" id ="gologin">Go to login</a>
 
                 <?php
                 if (isset($_POST['submit'])) {

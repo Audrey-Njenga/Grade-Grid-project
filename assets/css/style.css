@@ -9,7 +9,9 @@
 body{
 
     text-align: center;
-    background-image: url('/assets/images/books.jpg');
+    background-image: url(/assets/images/books.jpg)
+   
+   
    
 }
 
@@ -36,7 +38,7 @@ form{
 
 }
 
-form h4, h6{
+form h2, h4, h6{
     font-family: 'Open Sans' ;
     font-weight: 400;
     color:  #0c004d;
@@ -57,23 +59,32 @@ form input{
 }
 #check {
     font-family: 'Open Sans' ;
-    color: whitesmoke;
+    color:whitesmoke;
 }
 
 form a{
     text-decoration: none;  
     font-family: 'Open Sans';
-    color: #4021ed;
+    color: black;
+
 }
 
 form a:hover{
-    color: maroon;
+    color: darkred;
     text-decoration: none;
 
 }
 
 #confirm{
     margin-right: 12.5%;
+}
+
+#gologin{
+    font-size: 18px;
+}
+
+ span .input-group-text{
+    font-size: 25px;
 }
 
 @media only screen and (max-width: 700px){
@@ -92,5 +103,10 @@ input{
 }
 form h1,h4{
     font-size: 20px;
+}
+.logo img{
+    width: 30%;
+    margin-left: 60%;
+    margin-top: 5%;
 }
 }

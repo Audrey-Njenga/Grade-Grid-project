@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+    
+}
+
+body{
+
+    text-align: center;
+    background-color:#d1def5;
+    
+}
+
+.logo img{
+    width: 10%;
+    margin-left: 80%;
+    margin-top: 3%;
+    text-align: center;
+
+}
+.row{
+    margin-top: 15%;
+    margin-left: 15%;
+}
+.col-sm-4 p{
+    padding: 30px;
+    
+}
+form {
+    margin-left: 30%;
+}
+.form-group{
+    margin-left: 35%;
+   
+}
+#upload{
+    width: 30%;
+    text-align: center;
+    margin-left: 35%;
+}
+label, input{
+    font-family: 'Open Sans';
+}
+
+.upload{
+    text-align: center;
+}
+
+.input-group{
+    width: 60%;
+    
+}
+@media only screen and (max-width: 700px){
+   
+    .logo img{
+        width: 30%;
+        margin-left: 50%;
+        margin-top: 5%;
+    }
+    .row{
+        margin-top: 25%;
+        margin-left: 8%;
+    }
+    #upload{
+        width: 65%;
+        text-align: center;
+        margin-left: 20%;
+    }
+    }

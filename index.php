@@ -21,8 +21,8 @@
         <div id="login">
             <form method="POST" action="index.php">
                 <div class="formhead">
-                    <h1 class="page-header" id="header"> GRADE GRID</h1>
-                    <h4>LOGIN</h4>
+                    <h2 class="page-header" id="header"> GRADE GRID</h2>
+                    <h5>LOGIN</h5>
                 </div><br>
                 <input class="form-control" type="text" name="user_name" required placeholder="username"> <br>
                 <input class="form-control" type="password" name="password" required placeholder="password"> <br><br>

@@ -34,10 +34,10 @@ function login($user_name, $password){
             $savedPassword = $row["userPassword"];
         }
         if ($savedPassword == md5($password)) {
-            header("Location: landing.html");
-            exit();
+            echo '<form name="user_redirect" id="user_redirect" method="POST"'.'action="'$action_page.'">'.
+            '<input type="text" name="msg" value="'.$msg.'">'
         } else {
-            echo "<p id ='error'>invalid password</p>";
+
         }
     }else{
         echo "Unsuccessful".mysqli_error($GLOBALS['dbconn']);
