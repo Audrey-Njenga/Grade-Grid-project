@@ -8,40 +8,45 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <title>Login</title>
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <title>Grade Grid</title>
 </head>
 
 <body>
     <div class="main">
         <div class="logo">
-            <img src="assets/images/alu_logo_original.png" alt="logo">
+            <img src="/assets/images/alu_logo_original.png" alt="logo">
         </div>
 
         <div id="login">
             <form method="POST" action="index.php">
                 <div class="formhead">
-                    <h2 class="page-header" id="header"> GRADE GRID</h2>
-                    <h5>LOGIN</h5>
+                    <img src="/assets/images/grid.png" alt="grade grid" id="grade"><img>
+                    <!-- <h5>LOGIN</h5> -->
                 </div><br>
-                <input class="form-control" type="text" name="user_name" required placeholder="username"> <br>
-                <input class="form-control" type="password" name="password" required placeholder="password"> <br><br>
+                <input class="form-control" type="text" name="user_name" required placeholder="username"><br>
+                <input class="form-control" type="password" name="password" required placeholder="password"> <br>
+                <h5 id="error"></h5>
+                <!-- Add functionality-->
+                <!-- <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                    <label class="form-check-label" for="materialUnchecked">Remember me</label>
+                </div> -->
                 <a href="">Forgot password?</a><br><br>
-                <button class="btn btn-primary btn-block" type="submit">LOGIN</button><br>
-                <input class="form-check-input" type="checkbox"> Remember me <br><br>
+                <button class="btn btn-primary btn-block" type="submit">Login</button><br>
                 <a href="signup.php">Don't have an account? Sign up</a>
             </form>
         </div>
     </div>
 </body>
 
+</html>
 <?php
-include('functions.php');
-
+include('/classes/login.php');
 if (isset($_POST['user_name']) && isset($_POST['password'])) {
     $user_name = $_POST['user_name'];
     $password = $_POST['password'];
-    login($user_name, $password);
-} else {
+    $user = new login();
+    $user->authenticate($user_name, $password);
 }
 ?>

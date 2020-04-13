@@ -17,30 +17,26 @@
 
 <body>
     <div class="logo">
-        <img src="assets/images/alu_logo_original.png">
-    </div>
-    <!-- <div class="navbar">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <h1 class="navbar-brand" href="#">Grade Grid</h1>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span></span> Logout</a></li>
-                </ul>
-            </div>
-        </nav> -->
-    <div class="welcome">
         <h2>Welcome <h2 id="facilitatorName"></h2></h2>
+        <img src="assets/images/alu_logo_original.png">
+        
     </div>
-    <div class="row">
-        <div class="col-sm-4">
-                <button  onclick="window.location.href = 'uploadpage.html';" class="btn btn-primary"><i class="material-icons">add</i></button>
-            <p>Upload new grades</p>
-        </div>
-        <div class="col-sm-4">
-            <button class="btn btn-primary"><i class="material-icons">people</i></button>
-            <p>View student accounts</p>
+    </div>
+    <div class="main=content">
+        <div class="row">
+            <div class="col-sm-4">
+                <button onclick="window.location.href = 'uploadpage.html';" class="btn btn-primary"><i
+                        class="material-icons">add</i></button>
+                <p>Upload new grades</p>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-primary"><i class="material-icons">create</i></button>
+                <p>Edit grades</p>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-primary"><i class="material-icons">comment</i></button>
+                <p>View edit requests</p>
+            </div>
         </div>
     </div>
 
