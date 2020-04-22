@@ -19,7 +19,7 @@
         </div>
 
         <div id="login">
-            <form method="POST" action="index.php">
+            <form method="POST" action="/classes/login.php">
                 <div class="formhead">
                     <img src="/assets/images/grid.png" alt="grade grid" id="grade"><img>
                     <!-- <h5>LOGIN</h5> -->
@@ -33,7 +33,7 @@
                     <label class="form-check-label" for="materialUnchecked">Remember me</label>
                 </div> -->
                 <a href="">Forgot password?</a><br><br>
-                <button class="btn btn-primary btn-block" type="submit">Login</button><br>
+                <button class="btn btn-primary btn-block" type="submit" name="login">Login</button><br>
                 <a href="signup.php">Don't have an account? Sign up</a>
             </form>
         </div>
@@ -41,12 +41,3 @@
 </body>
 
 </html>
-<?php
-include('/classes/login.php');
-if (isset($_POST['user_name']) && isset($_POST['password'])) {
-    $user_name = $_POST['user_name'];
-    $password = $_POST['password'];
-    $user = new login();
-    $user->authenticate($user_name, $password);
-}
-?>

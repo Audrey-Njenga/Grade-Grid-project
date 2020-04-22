@@ -1,23 +1,39 @@
 <?php
-class login extends database
-{
 
+require "../classes/database.php";
 
-    public function authenticate($username, $password)
-    {
-        $hashed_password = md5($password);
-        $query = "SELECT password FROM users WHERE userName='" . $username . ";";
-        $result = $this->connect()->query($query);
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($result->num_rows == 0) {
-            echo "No records founds";
-        } else {
-            while ($data = $result->fetch(MYSQLI_BOTH)) {
-                if ($data['password'] == $password) {
-                    $user_Id = $data['idUsers'];
-                    header("Location: /pages/studentlanding.html");
-                }
+if (isset($_POST['login'])){
+    $password = $_POST['password'];
+    $username = $_POST['user_name'];
+    $hashed_password = md5($password);
+    $query = "SELECT * FROM users WHERE userName='".$username."';" or die($conn->error);
+    $result = $conn->query($query);
+    $row = $result->fetch_array();
+    if ($result->num_rows == 0) {
+        echo "Incorrect Username";
+    } else {
+        if ($hashed_password == $row['password']){
+            if ($row['userAccessID'] == 2){
+                session_start();
+                $_SESSION['userID'] = $row['userID'];
+                header("Location: /pages/facilitatorlanding.php");
             }
+            else{
+                session_start();
+                $_SESSION['userID'] = $row['userID'];
+                header("Location: /pages/studentlanding.php");
+            }
+            
+        }else{
+            echo "Incorrect password";
         }
+        
     }
+
+    
+    
 }
+
+
+
+?>
