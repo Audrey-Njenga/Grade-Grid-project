@@ -38,7 +38,7 @@ session_start();
     <div class="main-content">
         <div class="row">
             <div class="col-sm-4">
-                <button onclick="window.location.href = '/pages/insertgrades.php';" class="btn btn-primary"><i class="material-icons">add</i></button>
+                <button onclick="window.location.href = 'addgrades.php';" class="btn btn-primary"><i class="material-icons">add</i></button>
                 <p>Upload new grades</p>
             </div>
             <div class="col-sm-4">
