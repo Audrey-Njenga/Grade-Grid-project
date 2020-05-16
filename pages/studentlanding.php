@@ -22,7 +22,7 @@ $_SESSION['name'] = $stmt->fetch_object()->firstName;
 </head>
 <style>
     select.custom-select {
-        width: 40%;
+        width: 100%;
         margin-right: 40%;
     }
 
@@ -40,9 +40,52 @@ $_SESSION['name'] = $stmt->fetch_object()->firstName;
     <div class="logo">
         <img src="/assets/images/alu_logo_original.png">
     </div>
-    <h4>Welcome <?php echo $_SESSION['name']; ?></h4><br><br>
-    <div class="justify-content-center">
-        <form method="POST" action="studentlanding.php">
+    <h4>Welcome <?php echo $_SESSION['name']; ?></h4><br>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <form method="POST" action="studentlanding.php">
+                <select required class="custom-select" name="courseName">
+                    <option selected>Select Course</option>
+                    <?php
+                    $query = "SELECT * from courses";
+                    $result = $conn->query($query);
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<option value="' . $row['courseName'] . '">' . $row['courseName'] . '</option><br>';
+                    }
+                    ?>
+                </select><br><br>
+                <button type="submit" class="btn btn-primary" name="search">Search</button>
+            </form>
+        </div>
+        <div class="col-md-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title </th>
+                        <th>Grade </th>
+                        <th>Comment </th>
+                    </tr>
+                </thead>
+                <?php
+                if (isset($_POST['search'])) :
+                    $courseName = $_POST['courseName'];
+                    $result = printGrade($courseName);
+
+                    while ($row = $result->fetch_object()) : ?>
+                        <tr>
+                            <td> <?php echo $row->title; ?></td>
+                            <td> <?php echo $row->grade; ?></td>
+                            <td> <?php echo $row->comment; ?></td>
+
+                        </tr>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <form method="POST" action="/classes/complaintLog.php">
             <select required class="custom-select" name="courseName">
                 <option selected>Select Course</option>
                 <?php
@@ -53,34 +96,11 @@ $_SESSION['name'] = $stmt->fetch_object()->firstName;
                 }
                 ?>
             </select><br><br>
-            <button type="submit" class="btn btn-primary" name="search">Search</button>
+            <input class="form-control" type="text" name="gradeTitle" required placeholder="Enter grade title"><br>
+            <input class="form-control" type="text" name="complaint" required placeholder="Enter complaint"><br>
+            <button type="submit" class="btn btn-primary" name="log">Log complaint</button>
         </form>
-    </div>
-    <div class="row justify-content-center">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Title </th>
-                    <th>Grade </th>
-                    <th>Comment </th>
-                </tr>
-            </thead>
-            <?php
-            if (isset($_POST['search'])) :
-                $courseName = $_POST['courseName'];
-                $result = printGrade($courseName);
-            
-                while ($row = $result->fetch_object()) : ?>
-              <tr>
-                    <td> <?php echo $row->title; ?></td>
-                    <td> <?php echo $row->grade; ?></td>
-                    <td> <?php echo $row->comment; ?></td>
-                    
-            </tr>
 
-                <?php endwhile;?>
-                <?php endif;?>
-        </table>
     </div>
 
 </body>

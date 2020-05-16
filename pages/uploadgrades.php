@@ -56,11 +56,11 @@ session_start();
     <div class="row">
         <div class="col-md-3">
             <h6>Cohort:<span style="color:darkblue"> <?php echo $_SESSION['cohort']; ?></span>
-            </h6>
+            </h6><br>
             <h6>Course:<span style="color:darkblue"> <?php echo $_SESSION['courseName']; ?></span>
-            </h6>
+            </h6><br>
             <h6>Title:<span style="color:darkblue"> <?php echo $_SESSION['title']; ?></span>
-            </h6>
+            </h6><br>
         </div>
         <div class="col-md-9">
             <select class="custom-select" form="upload" name="studentName">

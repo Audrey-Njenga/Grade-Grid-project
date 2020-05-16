@@ -27,11 +27,7 @@
                 <input class="form-control" type="text" name="user_name" required placeholder="username"><br>
                 <input class="form-control" type="password" name="password" required placeholder="password"> <br>
                 <h5 id="error"></h5>
-                <!-- Add functionality-->
-                <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                    <label class="form-check-label" for="materialUnchecked">Remember me</label>
-                </div> -->
+                
                 <a href="">Forgot password?</a><br><br>
                 <button class="btn btn-primary btn-block" type="submit" name="login">Login</button><br>
                 <a href="signup.php">Don't have an account? Sign up</a>

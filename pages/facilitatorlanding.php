@@ -19,7 +19,6 @@ session_start();
 <style>
     h2{
         text-align: center;
-        color: black;
         padding: 10px;
     }
 </style>
@@ -32,9 +31,9 @@ session_start();
         $row = $result->fetch_array();
         echo "Welcome ".$row['firstName'];
         ?>  </h2>
-
     </div>
     </div>
+    
     <div class="main-content">
         <div class="row">
             <div class="col-sm-4">
@@ -42,11 +41,11 @@ session_start();
                 <p>Upload new grades</p>
             </div>
             <div class="col-sm-4">
-                <button class="btn btn-primary"><i class="material-icons">create</i></button>
+                <button onclick="window.location.href = 'editgrades.php';"  class="btn btn-primary"><i class="material-icons">create</i></button>
                 <p>Edit grades</p>
             </div>
             <div class="col-sm-4">
-                <button class="btn btn-primary"><i class="material-icons">comment</i></button>
+                <button onclick="window.location.href = 'complaintspage.php';" class="btn btn-primary"><i class="material-icons">comment</i></button>
                 <p>View edit requests</p>
             </div>
         </div>
